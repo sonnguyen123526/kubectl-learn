@@ -3,7 +3,7 @@ title: Fix a broken deployment
 prompt: |
   The deployment frontend was just deployed, but it isn't working. Find out
   why and fix it, so both of its pods are running and ready.
-  Keep using the nginx image.
+  Keep using the nginx:1.27 image.
 
   Steps:
     1. Run `kubectl get pods` and look at STATUS and RESTARTS.

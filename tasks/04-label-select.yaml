@@ -1,7 +1,7 @@
 id: label-select
 title: Label pods with a selector
 prompt: |
-  There are four pods named app-1 to app-4. Some have the label env=dev.
+  There are four pods named app-1 to app-4, all running the nginx image. Some have the label env=dev.
   Add the label tier=test to every pod with env=dev, and to no others.
   Do it in ONE command that uses a label selector, without typing pod names.
 

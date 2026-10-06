@@ -1,7 +1,7 @@
 id: scale-cart
 title: Scale a deployment
 prompt: |
-  A deployment named cart is running 1 pod.
+  A deployment named cart (image nginx:1.27) is running 1 pod.
   Scale it to 4 pods.
 
   Steps:
