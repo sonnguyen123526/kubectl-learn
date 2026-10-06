@@ -8,3 +8,6 @@ data.before-demo/
 
 # macOS folder metadata.
 .DS_Store
+
+# My demo script, kept local.
+docs/demo.md

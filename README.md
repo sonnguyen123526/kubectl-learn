@@ -101,9 +101,6 @@ kubectl-learn report       # how am I doing overall?
 kubectl-learn start        # on to the next one
 ```
 
-If you're presenting this, [docs/demo.md](docs/demo.md) is a 5-minute demo
-script I wrote for exactly that.
-
 ### The tasks
 
 There are eight so far, one for each concept I wanted to cover, roughly
