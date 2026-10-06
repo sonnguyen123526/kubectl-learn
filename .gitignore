@@ -1,0 +1,10 @@
+# Python's compiled bytecode, regenerated automatically.
+__pycache__/
+
+# Your personal state: the current task and your attempt history.
+data/
+# The backup docs/demo.md suggests making before a demo.
+data.before-demo/
+
+# macOS folder metadata.
+.DS_Store

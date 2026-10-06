@@ -1,0 +1,13 @@
+id: pod-web
+title: Create a pod
+prompt: >
+  Create a pod named web that runs the nginx image.
+difficulty: 1
+concept: pods
+hint: >
+  `kubectl run <name> --image=<image>` creates a single pod.
+  Check on it with `kubectl get pods`.
+verifier: check_pod_web
+cleanup:
+  # --now skips the usual 30s shutdown grace period.
+  - [delete, pod, web, --ignore-not-found, --now]

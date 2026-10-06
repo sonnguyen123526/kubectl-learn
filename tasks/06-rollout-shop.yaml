@@ -1,0 +1,15 @@
+id: rollout-shop
+title: Roll out a new image
+prompt: >
+  Create a deployment named shop running nginx:1.25 with 2 replicas.
+  Then update it to nginx:1.27 and wait for the rollout to finish.
+difficulty: 2
+concept: rollouts
+hint: >
+  `kubectl create deployment` takes --image and --replicas.
+  `kubectl set image deployment/shop <container>=<new-image>` starts a rollout;
+  the container is named after the image (nginx).
+  Follow it with `kubectl rollout status deployment/shop`.
+verifier: check_shop_rollout
+cleanup:
+  - [delete, deployment, shop, --ignore-not-found, --cascade=foreground]

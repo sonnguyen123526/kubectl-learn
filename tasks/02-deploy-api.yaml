@@ -1,0 +1,14 @@
+id: deploy-api
+title: Create a deployment
+prompt: >
+  Create a deployment named api that runs nginx:1.27 with 3 replicas.
+  Its pods should declare container port 80.
+  Wait until all 3 pods are ready.
+difficulty: 1
+concept: deployments
+hint: >
+  `kubectl create deployment <name>` takes --image, --replicas and --port.
+  Watch the pods appear with `kubectl get pods -w` (Ctrl-C to stop).
+verifier: check_deploy_api
+cleanup:
+  - [delete, deployment, api, --ignore-not-found, --cascade=foreground]

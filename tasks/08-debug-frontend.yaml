@@ -1,0 +1,18 @@
+id: debug-frontend
+title: Fix a broken deployment
+prompt: >
+  The deployment frontend was just deployed, but it isn't working. Find out
+  why and fix it, so both of its pods are running and ready. Keep using the
+  nginx image.
+difficulty: 3
+concept: debugging
+hint: >
+  Start with `kubectl get pods`. Then look closer: `kubectl describe pod <pod>`
+  lists recent events, and `kubectl logs <pod>` shows what the container
+  printed (add --previous to see the run that crashed).
+  `kubectl edit deployment frontend` opens the deployment in your editor.
+verifier: check_debug_frontend
+cleanup:
+  - [delete, deployment, frontend, --ignore-not-found, --cascade=foreground]
+setup:
+  - [create, deployment, frontend, --image=nginx:1.27, --replicas=2, --, nginx, -c, /etc/nginx/frontend.conf]

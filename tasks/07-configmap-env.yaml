@@ -1,0 +1,19 @@
+id: configmap-env
+title: Configure a pod with a configmap
+prompt: >
+  Create a configmap named app-config with two entries: MODE=debug and
+  LOG_LEVEL=info. Then create a pod named configured, running the nginx image,
+  that loads every entry of app-config as an environment variable.
+difficulty: 3
+concept: configmaps
+hint: >
+  `kubectl create configmap app-config --from-literal=KEY=value` (one
+  --from-literal per entry). `kubectl run` can't load a configmap, so write the
+  pod as YAML: start from
+  `kubectl run configured --image=nginx --dry-run=client -o yaml > pod.yaml`,
+  add an `envFrom:` list with a `configMapRef` to the container, then
+  `kubectl apply -f pod.yaml`.
+verifier: check_configmap_env
+cleanup:
+  - [delete, pod, configured, --ignore-not-found, --now]
+  - [delete, configmap, app-config, --ignore-not-found]

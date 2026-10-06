@@ -1,0 +1,21 @@
+id: label-select
+title: Label pods with a selector
+prompt: >
+  There are four pods named app-1 to app-4, and some of them have the label
+  env=dev. Add the label tier=test to every pod with env=dev, and to no others.
+  Try to do it in one command that uses a label selector, without typing any
+  pod names.
+difficulty: 2
+concept: labels
+hint: >
+  `kubectl get pods --show-labels` shows every pod's labels. `-l env=dev` is a
+  label selector: it narrows a command to the pods that match. `kubectl label`
+  accepts a selector in place of pod names.
+verifier: check_label_select
+cleanup:
+  - [delete, pod, app-1, app-2, app-3, app-4, --ignore-not-found, --now]
+setup:
+  - [run, app-1, --image=nginx, --labels=env=prod]
+  - [run, app-2, --image=nginx, --labels=env=dev]
+  - [run, app-3, --image=nginx, --labels=env=prod]
+  - [run, app-4, --image=nginx, --labels=env=dev]
