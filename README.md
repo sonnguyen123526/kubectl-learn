@@ -183,12 +183,6 @@ versions and it hides most of the fields. The JSON is the whole object in a
 fixed structure, so `pod["status"]["phase"]` always means the same thing.
 Parsing the table would have broken on me sooner or later.
 
-## How this tool models learning
-
-The design comes down to four ideas I kept coming back to: you learn by
-doing, feedback works best when it's immediate and specific, practice should
-go where you're weakest, and progress should be measured, not guessed.
-
 ### Practice
 
 Every task is real work on a real cluster. No multiple choice, no fake
