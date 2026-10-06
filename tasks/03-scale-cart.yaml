@@ -1,11 +1,17 @@
 id: scale-cart
 title: Scale a deployment
-prompt: >
+prompt: |
   A deployment named cart is running 1 pod.
-  Scale it to 4 pods and wait until all 4 are ready.
+  Scale it to 4 pods.
+
+  Steps:
+    1. Run `kubectl get deployment cart` to see the current state.
+    2. Scale the deployment to 4 replicas.
+    3. Run `kubectl get deployment cart` until READY shows 4/4.
+    4. Run `kubectl-learn check`.
 difficulty: 1
 concept: scaling
-hint: >
+hint: |
   `kubectl scale deployment <name> --replicas=<n>` changes how many pods a
   deployment runs. `kubectl get deployment cart` shows READY as ready/wanted.
 verifier: check_scale_cart

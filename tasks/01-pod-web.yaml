@@ -1,11 +1,17 @@
 id: pod-web
 title: Create a pod
-prompt: >
+prompt: |
   Create a pod named web that runs the nginx image.
+
+  Steps:
+    1. Create the pod.
+    2. Run `kubectl get pods` until web shows STATUS Running.
+    3. Run `kubectl-learn check`.
 difficulty: 1
 concept: pods
-hint: >
+hint: |
   `kubectl run <name> --image=<image>` creates a single pod.
+  For this task, the name is web and the image is nginx.
   Check on it with `kubectl get pods`.
 verifier: check_pod_web
 cleanup:

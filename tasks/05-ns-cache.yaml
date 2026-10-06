@@ -1,14 +1,22 @@
 id: ns-cache
 title: Work in a namespace
-prompt: >
+prompt: |
   Create a namespace named team-a. Then, inside team-a, run a pod named cache
   that uses the redis image.
+
+  Steps:
+    1. Create the namespace team-a.
+    2. Run the pod cache (image redis) inside team-a. Remember the flag that
+       picks a namespace.
+    3. Run `kubectl get pods -n team-a` until cache shows Running.
+    4. Run `kubectl-learn check`.
 difficulty: 2
 concept: namespaces
-hint: >
+hint: |
   `kubectl create namespace <name>` makes a namespace. Most commands take
   `-n <namespace>` to work somewhere other than default, including
   `kubectl run` and `kubectl get`.
+  Example shape: kubectl run <name> --image=<image> -n <namespace>
 verifier: check_ns_cache
 cleanup:
   # Deleting a namespace deletes everything in it.
